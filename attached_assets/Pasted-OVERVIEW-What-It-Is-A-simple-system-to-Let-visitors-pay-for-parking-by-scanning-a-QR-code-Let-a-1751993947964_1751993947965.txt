@@ -1,0 +1,118 @@
+OVERVIEW: What It Is
+A simple system to:
+
+Let visitors pay for parking by scanning a QR code.
+
+Let admins manage rates, view registrations, grant staff exemptions, and verify if a car is parked legally.
+
+All built using Stripe for payments, and ideally accessible via both desktop and mobile.
+
+🅱️ USER FLOW (Frontend – What customers see)
+1. 📱 Scan QR Code on Phone
+Takes user to a web-based form (hosted site or web app).
+
+Responsive design for mobile devices.
+
+2. 📝 Input Registration
+User types in their license plate (e.g., “ABC123”).
+
+3. 📅 Select Duration
+Options:
+
+Half Day (4 hrs)
+
+Full Day
+
+Week
+
+Month
+
+4. 📧 Input Email (Optional)
+If entered, send payment receipt.
+
+5. 💳 Payment via Stripe
+Show price dynamically based on selection.
+
+Process payment using Stripe Checkout or embedded Stripe widget.
+
+6. ✅ Confirmation Screen
+“Thank you” message.
+
+Parking confirmed.
+
+🆂 ADMIN FLOW (Backend – What staff/admins use)
+🎛️ Screen 1: Set Rates
+Admin can define pricing for:
+
+Half Day
+
+Day
+
+Week
+
+Month
+
+Stored in database or simple CMS panel.
+
+🆔 Screen 2: Add Staff Registration (Free Parking)
+Input license plate.
+
+Define date range for free parking.
+
+Save to DB with exemption status.
+
+📆 Screen 3: Parking Overview by Date
+Filter by date.
+
+View all:
+
+Registration
+
+Parking period
+
+Amount
+
+Paid via (e.g., Stripe)
+
+Date & time
+
+Export data as CSV.
+
+🔍 Screen 4: Search Registration
+Search license plate.
+
+Show whether the registration is paid, for what period, and if it’s exempt.
+
+📱 BACK OFFICE ON PHONE
+A simplified mobile-friendly version of the admin panel:
+
+Enter a plate number
+
+App returns whether it's legally parked (based on time, payment, or staff exemption).
+
+📦 WHAT YOU NEED TO BUILD
+🔧 Tech Stack
+Frontend: HTML/CSS/JavaScript or React (mobile responsive)
+
+Backend: Node.js, Python Flask, or Firebase for fast setup
+
+Database: Firebase Firestore / Supabase / MongoDB
+
+Payments: Stripe API integration
+
+Hosting: Replit, Vercel, or Firebase Hosting
+
+✅ Must-Have Features Checklist
+Feature	Frontend	Backend	Notes
+QR code scan page	✅	—	Opens the web form
+Form: Input registration	✅	✅	Save to DB
+Duration selection	✅	✅	Calculate price
+Optional email	✅	✅	Trigger Stripe + email
+Stripe payment	✅	✅	Use Stripe Checkout
+Confirmation screen	✅	✅	With receipt
+Set pricing panel (admin)	✅	✅	Rates stored in DB
+Staff exemption input	✅	✅	Add exemptions to DB
+View by date (table)	✅	✅	Export CSV
+Search reg.	✅	✅	Match plate to payment or exemption
+Mobile admin lookup	✅	✅	Show parking status instantly
+
