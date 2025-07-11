@@ -2,14 +2,14 @@ import Airtable from 'airtable';
 
 // For local development, create mock Airtable if credentials are not provided
 const isDevelopment = process.env.NODE_ENV === 'development';
-const apiKey = process.env.AIRTABLE_API_KEY;
-const baseId = process.env.AIRTABLE_BASE_ID;
+const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
+const baseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
 
 if (!apiKey && !isDevelopment) {
-  throw new Error('Missing required Airtable API key: AIRTABLE_API_KEY');
+  throw new Error('Missing required Airtable API key: NEXT_PUBLIC_AIRTABLE_API_KEY');
 }
 if (!baseId && !isDevelopment) {
-  throw new Error('Missing required Airtable base ID: AIRTABLE_BASE_ID');
+  throw new Error('Missing required Airtable base ID: NEXT_PUBLIC_AIRTABLE_BASE_ID');
 }
 
 // Create mock Airtable for development if credentials are missing
@@ -18,7 +18,7 @@ const base = (apiKey && baseId)
   : null;
 
 if (isDevelopment && (!apiKey || !baseId)) {
-  console.log('⚠️  Running in development mode with mock Airtable. Set AIRTABLE_API_KEY and AIRTABLE_BASE_ID for full functionality.');
+  console.log('⚠️  Running in development mode with mock Airtable. Set NEXT_PUBLIC_AIRTABLE_API_KEY and NEXT_PUBLIC_AIRTABLE_BASE_ID for full functionality.');
 }
 
 export const airtable = {

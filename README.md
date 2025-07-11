@@ -38,8 +38,8 @@ VITE_STRIPE_PUBLIC_KEY=pk_live_your_public_key
 STRIPE_SECRET_KEY=sk_live_your_secret_key
 
 # Airtable Configuration
-AIRTABLE_API_KEY=your_airtable_api_key
-AIRTABLE_BASE_ID=your_airtable_base_id
+NEXT_PUBLIC_AIRTABLE_API_KEY=your_airtable_api_key
+NEXT_PUBLIC_AIRTABLE_BASE_ID=your_airtable_base_id
 
 # Server Configuration
 PORT=3000
